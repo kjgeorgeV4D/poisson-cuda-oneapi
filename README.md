@@ -6,3 +6,5 @@ poisson.cu -- CUDA code that runs only on NVIDIA GPUs.
 poisson_unoptimized.dp.cpp -- unoptimized SYCL code directly obtained from SCYLomatic tool.
 
 poisson_optimized.dp.cpp -- optimized SYCL code.
+
+Compile using icpx -O3 -fsycl -std=c++17 -lOpenCL -lsycl poisson_optimized.dp.cpp -o poisson

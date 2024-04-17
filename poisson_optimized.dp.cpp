@@ -100,7 +100,7 @@ int main()
 	// diffusion coefficient
 	const double alpha = 1.0;
 	// convergence criterion
-	const double epsilon = 1e-6;
+	const double epsilon = 1e-3;
 	// --------------------------------------------
 	
 	// mesh spacing
@@ -190,8 +190,8 @@ int main()
 		{
 			maxNorm = *std::max_element( residual, residual + np, [](double a, double b) {
                                                                 return std::abs(a) < std::abs(b);});
+			std::cout <<iter << "  " << maxNorm <<"\n";
 		}
-		//if(iter%1000 == 0) std::cout <<iter << "  " << maxNorm <<"\n";
 
 		std::swap(d_U, d_Up);
 		iter++;
